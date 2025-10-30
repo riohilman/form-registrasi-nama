@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 1 - Form Registrasi Nama</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #667eea, transparent);
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Latihan 1</h1>
+        <h2>Form Registrasi Sederhana</h2>
+        
+        <div class="form-group">
+            <label for="namaDepan1">Nama Depan</label>
+            <input type="text" id="namaDepan1" placeholder="Masukkan nama depan">
+        </div>
+
+        <div class="form-group">
+            <label for="namaBelakang1">Nama Belakang</label>
+            <input type="text" id="namaBelakang1" placeholder="Masukkan nama belakang">
+        </div>
+
+        <button onclick="submitLatihan1()">Tampilkan Nama Lengkap</button>
+    </div>
+
+    <script>
+        function submitLatihan1() {
+            let namaDepan = document.getElementById('namaDepan1').value;
+            let namaBelakang = document.getElementById('namaBelakang1').value;
+
+            if (namaDepan === '' || namaBelakang === '') {
+                alert('Mohon isi semua field!');
+                return;
+            }
+
+            console.log('=== LATIHAN 1 ===');
+            console.log('Nama Lengkap: ' + namaDepan + ' ' + namaBelakang);
+            console.log('=================\n');
+
+            alert('Data berhasil diproses! Lihat console untuk hasil.');
+        }
+    </script>
+</body>
+</html>
